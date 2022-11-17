@@ -1,2 +1,7 @@
 @import "reset.css";
 @import "typography.css";
+
+body {
+    height: 100vh;
+    background: linear-gradient(#009688 15%, #dcdbd2 0%);
+}
