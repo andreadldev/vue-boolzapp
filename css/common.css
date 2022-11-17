@@ -1,0 +1,10 @@
+button {
+    border: none;
+    cursor: pointer;
+    background-color: inherit;
+}
+
+button i {
+    font-size: 20px;
+    color: #b1b1b1;
+}

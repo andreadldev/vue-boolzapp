@@ -1,10 +1,11 @@
 @import "reset.css";
+@import "common.css";
 @import "typography.css";
 
 body {
     height: 100vh;
     background: linear-gradient(#009688 15%, #dcdbd2 0%);
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 #app {
@@ -15,8 +16,6 @@ body {
 }
 
 .container {
-    /* background-color: #eaeaea; */
-    background-color: bisque;
     height: 95%;
     width: 85%;
     display: fl;
@@ -83,7 +82,6 @@ img {
 .inner-wrapper {
     height: 100%;
     display: flex;
-    /* background-color: yellow; */
 }
 
 .inner {
@@ -100,8 +98,7 @@ img {
     overflow-y: scroll;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    padding: 50px 0;
+    padding: 50px 10%;
 }
 
 .message-type {
@@ -124,7 +121,7 @@ img {
 }
 
 .message {
-    margin: 5px 80px;
+    margin: 5px 0px;
     display: inline-block;
     padding: 15px;
     border-radius: 10px;
@@ -139,6 +136,7 @@ img {
 }
 
 .message.received {
+    align-self: flex-start;
     background-color: white;
 }
 
@@ -180,7 +178,7 @@ img {
 }
 
 .searchBar input {
-    padding: 6.5px;
+    padding: 5.5px;
     outline: none;
     width: 87%;
 }
@@ -191,7 +189,7 @@ img {
 
 .side-users {
     width: 100%;
-    height: calc(100% - 125px);
+    height: calc(100% - 123px);
     overflow-y: scroll;
     align-items: flex-start;
     flex-direction: column;
