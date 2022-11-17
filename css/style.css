@@ -129,6 +129,13 @@ img {
     padding: 15px;
     border-radius: 10px;
     min-width: 270px;
+    position: relative;
+}
+
+.message span {
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .message.received {
@@ -184,10 +191,15 @@ img {
 
 .side-users {
     width: 100%;
-    height: calc(100% - 127px);
+    height: calc(100% - 125px);
     overflow-y: scroll;
     align-items: flex-start;
     flex-direction: column;
+}
+
+.side-users .user {
+    border-top: 1px solid darkgray;
+    border-bottom: 1px solid darkgray;
 }
 
 .notifications {
