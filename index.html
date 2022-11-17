@@ -12,6 +12,7 @@
 <body>
     <div id="app">
         <div class="container">
+            <!-- HEADER -->
             <section class="header">
                 <div class="self">
                     <div>
@@ -40,36 +41,57 @@
                     </div>
                 </div>
             </section>
-
-            <section class="side">
-                <div class="notifications user">
-                    <div>
-                        <img src="https://via.placeholder.com/65" alt="...">
-                        <div class="user-info">
-                            <span>Ricevi notifiche</span>
-                            <span><a href="#">Attiva notifiche</a></span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="searchBar">
-                    <div>Icon</div>
-                    <input type="text" id="searchBar">
-                </div>
-
-                <div class="side-users">
-                    <div class="user">
+            
+            <div class="inner-wrapper">
+                <!-- SIDE -->
+                <section class="side">
+                    <div class="notifications user">
                         <div>
                             <img src="https://via.placeholder.com/65" alt="...">
                             <div class="user-info">
-                                <span>Nome</span>
-                                <span>Ultimo messaggio inviato</span>
+                                <span>Ricevi notifiche</span>
+                                <span><a href="#">Attiva notifiche</a></span>
                             </div>
-                            <span class="time-up">orario</span>
                         </div>
                     </div>
-                </div>
-            </section>
+
+                    <div class="searchBar">
+                        <div>Icon</div>
+                        <input type="text" id="searchBar">
+                    </div>
+
+                    <div class="side-users">
+                        <div class="user">
+                            <div>
+                                <img src="https://via.placeholder.com/65" alt="...">
+                                <div class="user-info">
+                                    <span>Nome</span>
+                                    <span>Ultimo messaggio inviato</span>
+                                </div>
+                                <span class="time-up">orario</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- INNER -->
+                <section class="inner">
+                    <div class="message-display">
+                        <div class="message sent">Sent</div>
+                        <div class="message received">Received</div>
+                        <div class="message received">Received</div>
+                        <div class="message sent">Sent</div>
+                        <div class="message sent">Sent</div>
+                    </div>
+                    <span>ciao</span>
+                    <div class="message-type">
+                        <button>Bottone</button>
+                        <input type="text" id="typeBar">
+                        <button>Bottone</button>
+                    </div>
+                </section>
+            </div>
+            
+
         </div>
     </div>
 </body>

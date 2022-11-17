@@ -4,6 +4,7 @@
 body {
     height: 100vh;
     background: linear-gradient(#009688 15%, #dcdbd2 0%);
+    /* overflow: hidden; */
 }
 
 #app {
@@ -18,13 +19,14 @@ body {
     background-color: bisque;
     height: 95%;
     width: 85%;
+    display: fl;
 }
 
 /* ==========================================
    =================HEADER===================
    ========================================== */
 .header {
-    background-color: lightcoral;
+    background-color: #eaeaea;
     height: 80px;
     display: flex;
     align-items: center;
@@ -40,13 +42,13 @@ body {
 .user {
     padding: 0 10px;
     justify-content: space-between;
-    border: 1px solid orange;
     position: relative;
 }
 
-.header .self,
-.side {
+.header .self {
     width: 35%;
+    border-right: 1px solid darkgray;
+    height: 100%;
 }
 
 .header .user {
@@ -75,6 +77,71 @@ img {
 }
 
 /* ==========================================
+   ==================INNER===================
+   ========================================== */
+
+.inner-wrapper {
+    height: 100%;
+    display: flex;
+    /* background-color: yellow; */
+}
+
+.inner {
+    height: calc(100% - 80px);
+    background-image: url('img/mine.jpg');
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.message-display {
+    height: calc(100% - 80px);
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 50px 0;
+}
+
+.message-type {
+    background-color: #f3eeea;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.message-type input {
+    width: 82%;
+    padding: 6.5px;
+    outline: none;
+    margin: 0 2%;
+}
+
+.message {
+    margin: 5px 80px;
+    display: inline-block;
+    padding: 15px;
+    border-radius: 10px;
+    min-width: 270px;
+}
+
+.message.received {
+    background-color: white;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #d5f9ba;
+}
+
+
+/* ==========================================
    ==================SIDE====================
    ========================================== */
 
@@ -82,6 +149,7 @@ img {
     flex-direction: column;
     background-color: white;
     height: calc(100% - 80px);
+    width: 35%;
 }
 
 .side * {
@@ -123,7 +191,7 @@ img {
 }
 
 .notifications {
-    background-color: lightblue;
+    background-color: #8edafc;
 }
 
 .time-up {
