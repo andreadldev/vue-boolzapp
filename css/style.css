@@ -5,3 +5,58 @@ body {
     height: 100vh;
     background: linear-gradient(#009688 15%, #dcdbd2 0%);
 }
+
+#app {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    /* background-color: #eaeaea; */
+    background-color: bisque;
+    height: 95%;
+    width: 85%;
+}
+
+/* ==========================================
+   =================HEADER===================
+   ========================================== */
+.header {
+    background-color: lightcoral;
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.header * {
+    display: flex;
+    align-items: center;
+}
+
+.header .self,
+.header .user {
+    padding: 0 10px;
+    justify-content: space-between;
+}
+
+.header .self {
+    width: 40%;
+}
+
+.header .user {
+    width: 60%;
+}
+
+.header .user-info {
+    display: block;
+}
+
+.header span {
+    padding: 0 10px;
+}
+
+.header .btn-group * {
+    margin: 0 3px;
+}
