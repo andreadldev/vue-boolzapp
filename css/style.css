@@ -18,7 +18,6 @@ body {
     background-color: bisque;
     height: 95%;
     width: 85%;
-    /* overflow: hidden; */
 }
 
 /* ==========================================
@@ -81,12 +80,34 @@ img {
 
 .side {
     flex-direction: column;
-    background-color: aliceblue;
+    background-color: white;
     height: calc(100% - 80px);
 }
 
 .side * {
     align-items: flex-start;
+}
+
+.notifications * {
+    align-items: center;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+}
+
+.searchBar * {
+    border: 1px solid lightgray;
+    margin: 10px 0;
+    padding: 5px;
+    
+}
+
+.searchBar input {
+    padding: 6.5px;
+    outline: none;
+    width: 87%;
 }
 
 .side .user-info {
@@ -95,7 +116,7 @@ img {
 
 .side-users {
     width: 100%;
-    height: calc(100% - 77px);
+    height: calc(100% - 127px);
     overflow-y: scroll;
     align-items: flex-start;
     flex-direction: column;
