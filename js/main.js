@@ -7,7 +7,7 @@ createApp({
                 name: 'Sofia',
                 avatar: 'css/img/avatar_io.jpg'
             },
-            clock: [],
+            activeIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -177,6 +177,6 @@ createApp({
 
     },
     mounted() {
-
+        console.log(this.activeIndex)
     }
 }).mount('#app')

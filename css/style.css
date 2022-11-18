@@ -175,3 +175,7 @@
 .side-users img {
     margin-left: 10px;
 }
+
+.active {
+    background-color: var(--inner-light-1);
+}

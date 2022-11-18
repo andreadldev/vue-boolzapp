@@ -28,10 +28,14 @@
 
                 <div class="user">
                     <div>
-                        <img src="https://via.placeholder.com/65" alt="...">
+                        <img :src="('css/img/avatar_' + [activeIndex + 1] + '.jpg')">
                         <div class="user-info">
-                            <span class="name">Nome</span>
-                            <span><small>Ultimo accesso</small></span>
+                            <span class="name">{{contacts[activeIndex].name}}</span>
+                            <span>
+                                <small>Ultimo accesso oggi alle 
+                                    {{contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].date.substring(11, 19)}}
+                                </small>
+                            </span>
                         </div>
                     </div>
                     <div class="btn-group">
@@ -63,10 +67,9 @@
                     </div>
 
                     <div class="side-users">
-                        <div class="user" v-for="(user, index) in contacts">
+                        <div class="user" v-for="(user, index) in contacts" :class="activeIndex === index ? 'active' : '' ">
                             <div>
-                                <img :src="('css/img/avatar_' + [index + 1] + '.jpg')"
-                                />
+                                <img :src="('css/img/avatar_' + [index + 1] + '.jpg')"/>
                                 <div class="user-info">
                                     <span class="name">{{contacts[index].name}}</span>
                                     <span><small>Ultimo messaggio inviato</small></span>
