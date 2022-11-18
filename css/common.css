@@ -1,4 +1,68 @@
-button {
+/* =================COLORS=================== */
+:root {
+    --background-green: #009688;
+    --background-light: #dcdbd2;
+    --inner-light-1: #eaeaea;
+    --inner-light-2: #f3eeea;
+    --message-sent: #d5f9ba;
+    --message-received: white;
+    --notifications: #8edafc;
+  }
+  
+/* =================MAIN & COMMON=================== */
+body {
+    height: 100vh;
+    background: linear-gradient(var(--background-green) 15%, var(--background-light) 0%);
+    overflow: hidden;
+}
+
+#app {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 95%;
+    width: 85%;
+    overflow: hidden;
+}
+
+img {
+    padding: 5px 0;
+    border-radius: 50%;
+    width: 50px;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.user-info,
+.notifications-info {
+    display: block !important; 
+}
+
+.clock-up {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.clock-down {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* =================BUTTONS & FONTAWESOME=================== */
+button, i {
     border: none;
     cursor: pointer;
     background-color: inherit;
@@ -7,4 +71,25 @@ button {
 button i {
     font-size: 20px;
     color: #b1b1b1;
+}
+
+#notifications-icon i {
+    color: var(--notifications);
+}
+
+.searchBar i {
+    position: absolute;
+    left: 22px;
+    pointer-events: none;
+    color: #b1b1b1;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.message-type button {
+    margin: auto;
+}
+
+.message-type button i {
+    color: grey;
 }

@@ -16,7 +16,7 @@
             <section class="header">
                 <div class="self">
                     <div>
-                        <img src="https://via.placeholder.com/65" alt="...">
+                        <img src="css/img/avatar_io.jpg" alt="...">
                         <span class="name">Nome</span>
                     </div>
                     <div class="btn-group">
@@ -47,9 +47,11 @@
                 <section class="side">
                     <div class="notifications user">
                         <div>
-                            <img src="https://via.placeholder.com/65" alt="...">
-                            <div class="user-info">
-                                <span>Ricevi notifiche</span>
+                            <div id="notifications-icon">
+                                <i class="fa-solid fa-bell-slash"></i>
+                            </div>
+                            <div class="notifications-info">
+                                <span>Ricevi notifiche di nuovi messaggi</span>
                                 <span><a href="#">Attiva notifiche</a></span>
                             </div>
                         </div>
@@ -57,7 +59,7 @@
 
                     <div class="searchBar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="searchBar">
+                        <input type="text" id="searchBar" placeholder="Cerca o inizia una nuova chat">
                     </div>
 
                     <div class="side-users">
@@ -68,7 +70,7 @@
                                     <span class="name">Nome</span>
                                     <span><small>Ultimo messaggio inviato</small></span>
                                 </div>
-                                <span class="time-up"><small>orario</small></span>
+                                <span class="clock-up"><small>orario</small></span>
                             </div>
                         </div>
                     </div>
@@ -77,30 +79,35 @@
                 <section class="inner">
                     <div class="message-display">
                         <div class="message sent">Sent
-                            <span><small>orario</small></span>
+                            <span class="clock-down"><small>orario</small></span>
                         </div>
                         <div class="message received">Received
-                            <span><small>orario</small></span>
+                            <span class="clock-down"><small>orario</small></span>
                         </div>
                         <div class="message received">Received
-                            <span><small>orario</small></span>
+                            <span class="clock-down"><small>orario</small></span>
                         </div>
                         <div class="message sent">Sent
-                            <span><small>orario</small></span>
+                            <span class="clock-down"><small>orario</small></span>
                         </div>
                         <div class="message sent">Sent
-                            <span><small>orario</small></span>
+                            <span class="clock-down"><small>orario</small></span>
+                        </div>
+                        <div class="message received">Received
+                            <span class="clock-down"><small>orario</small></span>
+                        </div>
+                        <div class="message sent">Sent
+                            <span class="clock-down"><small>orario</small></span>
                         </div>
                     </div>
 
                     <div class="message-type">
                         <button><i class="fa-regular fa-face-smile"></i></button>
-                        <input type="text" id="typeBar">
+                        <input type="text" id="typeBar" placeholder="Scrivi un messaggio">
                         <button><i class="fa-solid fa-microphone"></i></button>
                     </div>
                 </section>
             </div>
-            
 
         </div>
     </div>
