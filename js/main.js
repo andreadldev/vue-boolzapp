@@ -3,6 +3,11 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            self: {
+                name: 'Sofia',
+                avatar: 'css/img/avatar_io.jpg'
+            },
+            clock: [],
             contacts: [
                 {
                     name: 'Michele',
@@ -172,6 +177,6 @@ createApp({
 
     },
     mounted() {
-        
+
     }
 }).mount('#app')
