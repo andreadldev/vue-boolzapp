@@ -33,7 +33,7 @@
                             <span class="name">{{contacts[activeIndex].name}}</span>
                             <span>
                                 <small>Ultimo accesso oggi alle 
-                                    {{contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].date.substring(11, 19)}}
+                                    {{contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].date.substring(11, 16)}}
                                 </small>
                             </span>
                         </div>
@@ -67,7 +67,7 @@
                     </div>
 
                     <div class="side-users">
-                        <div class="user" v-for="(user, index) in contacts" :class="activeIndex === index ? 'active' : '' ">
+                        <div class="user" v-for="(user, index) in contacts" @click="clickContact(index)" :class="activeIndex === index ? 'active' : '' ">
                             <div>
                                 <img :src="('css/img/avatar_' + [index + 1] + '.jpg')"/>
                                 <div class="user-info">
@@ -84,25 +84,7 @@
                 <!-- INNER -->
                 <section class="inner">
                     <div class="message-display">
-                        <div class="message sent">Sent
-                            <span class="clock-down"><small>orario</small></span>
-                        </div>
-                        <div class="message received">Received
-                            <span class="clock-down"><small>orario</small></span>
-                        </div>
-                        <div class="message received">Received
-                            <span class="clock-down"><small>orario</small></span>
-                        </div>
-                        <div class="message sent">Sent
-                            <span class="clock-down"><small>orario</small></span>
-                        </div>
-                        <div class="message sent">Sent
-                            <span class="clock-down"><small>orario</small></span>
-                        </div>
-                        <div class="message received">Received
-                            <span class="clock-down"><small>orario</small></span>
-                        </div>
-                        <div class="message sent">Sent
+                        <div class="message" v-for="(message, index) in contacts[activeIndex].messages" :class="contacts[activeIndex].messages[index].status === 'sent' ? 'sent' : 'received' ">{{this.contacts[this.activeIndex].messages[index].message}}
                             <span class="clock-down"><small>orario</small></span>
                         </div>
                     </div>

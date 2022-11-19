@@ -3,11 +3,11 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            activeIndex: 0,
             self: {
                 name: 'Sofia',
                 avatar: 'css/img/avatar_io.jpg'
             },
-            activeIndex: 0,
             contacts: [
                 {
                     name: 'Michele',
@@ -174,9 +174,11 @@ createApp({
         }
     },
     methods: {
-
+        clickContact(index) {
+            this.activeIndex = index;
+        }
     },
     mounted() {
-        console.log(this.activeIndex)
+
     }
 }).mount('#app')
