@@ -4,6 +4,8 @@ createApp({
     data() {
         return {
             activeIndex: 0,
+            lastMessageIndex: 1,
+            messageField: '',
             self: {
                 name: 'Sofia',
                 avatar: 'css/img/avatar_io.jpg'
@@ -176,7 +178,28 @@ createApp({
     methods: {
         clickContact(index) {
             this.activeIndex = index;
-        }
+        },
+        lastMessage(index) {
+            let lastMessageIndex = 1;
+            if (this.contacts[index].messages[this.contacts[index].messages.length-lastMessageIndex].status == 'received') {
+                return this.contacts[index].messages[this.contacts[index].messages.length-lastMessageIndex].date.substring(11, 16)
+            }
+            while (this.contacts[index].messages[this.contacts[index].messages.length-lastMessageIndex].status == 'sent') {
+                lastMessageIndex++
+                if (this.contacts[index].messages[this.contacts[index].messages.length-lastMessageIndex].status == 'received') {
+                    return this.contacts[index].messages[this.contacts[index].messages.length-lastMessageIndex].date.substring(11, 16)
+                }
+            }
+        },
+        sendMessage(text) {
+            let newMessage = {
+                date: '',
+                message: `${text}`,
+                status: 'sent'
+            }
+            this.contacts[this.activeIndex].messages.push(newMessage);
+            this.messageField = ''
+        },
     },
     mounted() {
 

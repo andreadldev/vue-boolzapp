@@ -32,9 +32,7 @@
                         <div class="user-info">
                             <span class="name">{{contacts[activeIndex].name}}</span>
                             <span>
-                                <small>Ultimo accesso oggi alle 
-                                    {{contacts[activeIndex].messages[contacts[activeIndex].messages.length-1].date.substring(11, 16)}}
-                                </small>
+                                <small>Ultimo accesso oggi alle {{lastMessage(activeIndex)}}</small>
                             </span>
                         </div>
                     </div>
@@ -72,10 +70,10 @@
                                 <img :src="('css/img/avatar_' + [index + 1] + '.jpg')"/>
                                 <div class="user-info">
                                     <span class="name">{{contacts[index].name}}</span>
-                                    <span><small>Ultimo messaggio inviato</small></span>
+                                    <span><small>{{this.contacts[index].messages[this.contacts[index].messages.length-1].message}}</small></span>
                                 </div>
                                 <span class="clock-up">
-                                    <small>{{contacts[index].messages[contacts[index].messages.length-1].date}}</small>
+                                    <small>{{this.contacts[index].messages[this.contacts[index].messages.length-1].date.substring(0, 16)}}</small>
                                 </span>
                             </div>
                         </div>
@@ -84,14 +82,17 @@
                 <!-- INNER -->
                 <section class="inner">
                     <div class="message-display">
-                        <div class="message" v-for="(message, index) in contacts[activeIndex].messages" :class="contacts[activeIndex].messages[index].status === 'sent' ? 'sent' : 'received' ">{{this.contacts[this.activeIndex].messages[index].message}}
-                            <span class="clock-down"><small>orario</small></span>
+                        <div class="message" v-for="(message, index) in contacts[activeIndex].messages" :class="contacts[activeIndex].messages[index].status === 'sent' ? 'sent' : 'received' ">
+                            <div>{{this.contacts[this.activeIndex].messages[index].message}}</div>
+                            <span class="clock-down"><small>{{this.contacts[this.activeIndex].messages[index].date.substring(11, 16)}}</small></span>
                         </div>
                     </div>
 
                     <div class="message-type">
                         <button><i class="fa-regular fa-face-smile"></i></button>
-                        <input type="text" id="typeBar" placeholder="Scrivi un messaggio">
+                        <form @submit.prevent="sendMessage(messageField)">
+                            <input type="text" id="typeMessage" placeholder="Scrivi un messaggio" v-model="messageField" required>
+                        </form>
                         <button><i class="fa-solid fa-microphone"></i></button>
                     </div>
                 </section>
