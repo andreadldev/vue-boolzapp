@@ -35,7 +35,7 @@ img {
     width: 50px;
 }
 
-.user {
+.user, .user-list {
     display: flex;
     justify-content: space-between;
     align-items: center;

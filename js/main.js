@@ -206,10 +206,6 @@ createApp({
             console.log(newMessage)
         },
         contactFilt() {
-            // names = this.contacts[this.indiceDin].name; 
-      
-            // const result = names.includes(this.nuovoText);
-      
             this.contacts.forEach(element => {
               let lower = element.name.toLowerCase();
       
