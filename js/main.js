@@ -193,12 +193,13 @@ createApp({
         },
         sendMessage(text) {
             let newMessage = {
-                date: '',
+                date: `${moment().format('L').substring(0, 10)} ${moment().format().substring(11, 16)}`,
                 message: `${text}`,
                 status: 'sent'
-            }
+            };
             this.contacts[this.activeIndex].messages.push(newMessage);
-            this.messageField = ''
+            this.messageField = '';
+            console.log(newMessage)
         },
     },
     mounted() {
