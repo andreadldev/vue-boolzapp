@@ -33,7 +33,7 @@
                         <div class="user-info">
                             <span class="name">{{contacts[activeIndex].name}}</span>
                             <span>
-                                <small>Ultimo accesso oggi alle {{lastMessage(activeIndex)}}</small>
+                                <small>Ultimo accesso {{lastAccess()}} alle {{lastMessage(activeIndex)}}</small>
                             </span>
                         </div>
                     </div>
@@ -62,11 +62,11 @@
 
                     <div class="searchBar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="searchBar" placeholder="Cerca o inizia una nuova chat">
+                        <input type="text" id="searchInput" placeholder="Cerca o inizia una nuova chat" v-model="search1" v-on:keyup="contactFilt()">
                     </div>
 
                     <div class="side-users">
-                        <div class="user" v-for="(user, index) in contacts" @click="clickContact(index)" :class="activeIndex === index ? 'active' : '' ">
+                        <div class="user" v-for="(user, index) in contacts" @click="clickContact(index)" :class="activeIndex === index ? 'active' : '' " >
                             <div>
                                 <img :src="('css/img/avatar_' + [index + 1] + '.jpg')"/>
                                 <div class="user-info">

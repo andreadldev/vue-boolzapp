@@ -4,8 +4,8 @@ createApp({
     data() {
         return {
             activeIndex: 0,
-            lastMessageIndex: 1,
             messageField: '',
+            search1: '',
             self: {
                 name: 'Sofia',
                 avatar: 'css/img/avatar_io.jpg'
@@ -191,7 +191,11 @@ createApp({
                 }
             }
         },
+        lastAccess() {
+            return this.contacts[this.activeIndex].messages[0].date.substring(0, 11)
+        },
         sendMessage(text) {
+            this.lastAccessIndex++;
             let newMessage = {
                 date: `${moment().format('L').substring(0, 10)} ${moment().format().substring(11, 16)}`,
                 message: `${text}`,
@@ -201,6 +205,23 @@ createApp({
             this.messageField = '';
             console.log(newMessage)
         },
+        contactFilt() {
+            // names = this.contacts[this.indiceDin].name; 
+      
+            // const result = names.includes(this.nuovoText);
+      
+            this.contacts.forEach(element => {
+              let lower = element.name.toLowerCase();
+      
+              let input = this.search1.toLowerCase();
+              
+              if (lower.includes(input)) {
+                element.visible = true;
+              } else {
+                element.visible = false;
+              }
+            });
+          }
     },
     mounted() {
 
