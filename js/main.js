@@ -5,7 +5,8 @@ createApp({
         return {
             activeIndex: 0,
             messageField: '',
-            search1: '',
+            search: '',
+            getAnswer: false,
             self: {
                 name: 'Sofia',
                 avatar: 'css/img/avatar_io.jpg'
@@ -203,21 +204,35 @@ createApp({
             };
             this.contacts[this.activeIndex].messages.push(newMessage);
             this.messageField = '';
-            console.log(newMessage)
+            this.getAnswer = true;
+            this.getAnswerFunction();
         },
-        contactFilt() {
+        contactFilter() {
             this.contacts.forEach(element => {
-              let lower = element.name.toLowerCase();
-      
-              let input = this.search1.toLowerCase();
-              
-              if (lower.includes(input)) {
+                let lower = element.name.toLowerCase();
+                let input = this.search.toLowerCase(); 
+
+                if (lower.startsWith(input)) {
                 element.visible = true;
-              } else {
+                } 
+                else {
                 element.visible = false;
-              }
+                }
             });
-          }
+        },
+        getAnswerFunction() {
+            if (this.getAnswer == true) {
+                const answer = setTimeout(() => {
+                    let newMessage = {
+                        date: `${moment().format('L').substring(0, 10)} ${moment().format().substring(11, 16)}`,
+                        message: `Ok`,
+                        status: 'received'
+                    };
+                    this.contacts[this.activeIndex].messages.push(newMessage);
+                    this.getAnswer = false;
+                }, 2000);
+            }
+        } 
     },
     mounted() {
 

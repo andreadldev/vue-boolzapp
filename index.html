@@ -62,12 +62,12 @@
 
                     <div class="searchBar">
                         <i class="fa-solid fa-magnifying-glass"></i>
-                        <input type="text" id="searchInput" placeholder="Cerca o inizia una nuova chat" v-model="search1" v-on:keyup="contactFilt(index)">
+                        <input type="text" id="searchInput" placeholder="Cerca o inizia una nuova chat" v-model="search" v-on:keyup="contactFilter()">
                     </div>
 
                     <div class="side-users">
                         <div class="user-list" v-for="(user, index) in contacts" @click="clickContact(index)" :class="activeIndex === index ? 'active' : '' " >
-                            <div v-if="user.visible == true">
+                            <div class="user-wrapper" v-if="user.visible == true">
                                 <img :src="('css/img/avatar_' + [index + 1] + '.jpg')"/>
                                 <div class="user-info">
                                     <span class="name">{{contacts[index].name}}</span>

@@ -168,13 +168,14 @@
     overflow-y: scroll;
 }
 
-.side-users .user {
+.side-users .user-wrapper {
+    width: 100%;
     padding: 5px 0;
     border-bottom: 1px solid var(--inner-light-2);
     cursor: pointer;
 }
 
-.side-users .user:first-child {
+.side-users .user-list:first-child {
     border-top: 1px solid var(--inner-light-2);
 }
 
