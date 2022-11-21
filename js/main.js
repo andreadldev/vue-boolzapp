@@ -194,12 +194,11 @@ createApp({
             }
         },
 
-        lastAccess() {
-            return this.contacts[this.activeIndex].messages[0].date.substring(0, 11)
-        },
+        // lastAccess() {
+        //     return this.contacts[this.activeIndex].messages[this.contacts[this.activeIndex].messages.length-1].date.substring(0, 11);
+        // },
 
         sendMessage(text) {
-            this.lastAccessIndex++;
             let newMessage = {
                 date: `${moment().format('L').substring(0, 10)} ${moment().format().substring(11, 16)}`,
                 message: `${text}`,
@@ -234,6 +233,7 @@ createApp({
                         message: `Ok`,
                         status: 'received'
                     };
+                    const newDate = newMessage.date;
                     this.contacts[index].messages.push(newMessage);
                     this.getAnswer = false;
                 }, 2000);
