@@ -1,9 +1,9 @@
-span {
-    padding: 0 10px;
+* {
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-span.name {
-    font-weight: bold;
+span {
+    padding: 0 10px;
 }
 
 .notifications a {
@@ -11,5 +11,6 @@ span.name {
 }
 
 small {
+    padding-top: 7px;
     color: gray;
 }

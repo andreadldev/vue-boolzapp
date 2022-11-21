@@ -61,10 +61,12 @@
 .message {
     display: inline-block;
     position: relative;
-    min-width: 270px;
+    max-width: 270px;
     margin: 5px 0px;
     padding: 15px;
+    padding-right: 45px;
     border-radius: 10px;
+    overflow-wrap: break-word;
 }
 
 .message.received {
@@ -164,8 +166,9 @@
     align-items: flex-start;
     flex-direction: column;
     width: 100%;
-    height: calc(100% - 113px);
+    max-height: calc(100% - 113px);
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .side-users .user-wrapper {
@@ -181,6 +184,12 @@
 
 .side-users img {
     margin-left: 10px;
+}
+
+.last-message {
+    white-space: nowrap;
+    width: calc(100% - 60px);
+    overflow: hidden;
 }
 
 .active {

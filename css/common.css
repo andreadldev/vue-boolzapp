@@ -47,7 +47,8 @@ img {
 
 .user-info,
 .notifications-info {
-    display: block !important; 
+    display: inline-block !important; 
+    width: 100%;
 }
 
 .clock-up {

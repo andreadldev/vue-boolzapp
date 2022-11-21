@@ -71,7 +71,7 @@
                                 <img :src="('css/img/avatar_' + [index + 1] + '.jpg')"/>
                                 <div class="user-info">
                                     <span class="name">{{contacts[index].name}}</span>
-                                    <span><small>{{this.contacts[index].messages[this.contacts[index].messages.length-1].message}}</small></span>
+                                    <span class="last-message"><small>{{this.contacts[index].messages[this.contacts[index].messages.length-1].message}}</small></span>
                                 </div>
                                 <span class="clock-up">
                                     <small>{{this.contacts[index].messages[this.contacts[index].messages.length-1].date.substring(0, 16)}}</small>
