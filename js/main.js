@@ -180,6 +180,7 @@ createApp({
         clickContact(index) {
             this.activeIndex = index;
         },
+
         lastMessage(index) {
             let lastMessageIndex = 1;
             if (this.contacts[index].messages[this.contacts[index].messages.length-lastMessageIndex].status == 'received') {
@@ -192,9 +193,11 @@ createApp({
                 }
             }
         },
+
         lastAccess() {
             return this.contacts[this.activeIndex].messages[0].date.substring(0, 11)
         },
+
         sendMessage(text) {
             this.lastAccessIndex++;
             let newMessage = {
@@ -207,6 +210,7 @@ createApp({
             this.getAnswer = true;
             this.getAnswerFunction();
         },
+
         contactFilter() {
             this.contacts.forEach(element => {
                 let lower = element.name.toLowerCase();
@@ -220,15 +224,17 @@ createApp({
                 }
             });
         },
+
         getAnswerFunction() {
             if (this.getAnswer == true) {
+                const index = this.activeIndex;
                 const answer = setTimeout(() => {
                     let newMessage = {
                         date: `${moment().format('L').substring(0, 10)} ${moment().format().substring(11, 16)}`,
                         message: `Ok`,
                         status: 'received'
                     };
-                    this.contacts[this.activeIndex].messages.push(newMessage);
+                    this.contacts[index].messages.push(newMessage);
                     this.getAnswer = false;
                 }, 2000);
             }
