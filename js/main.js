@@ -228,14 +228,17 @@ createApp({
             if (this.getAnswer == true) {
                 const index = this.activeIndex;
                 const answer = setTimeout(() => {
-                    let newMessage = {
-                        date: `${moment().format('L').substring(0, 10)} ${moment().format().substring(11, 16)}`,
-                        message: `Ok`,
-                        status: 'received'
-                    };
-                    const newDate = newMessage.date;
-                    this.contacts[index].messages.push(newMessage);
-                    this.getAnswer = false;
+                    axios.get(`https://api.chucknorris.io/jokes/random`)
+                    .then((response) =>{
+                        let newMessage = {
+                            date: `${moment().format('L').substring(0, 10)} ${moment().format().substring(11, 16)}`,
+                            message: response.data.value,
+                            status: 'received'
+                        };
+                        const newDate = newMessage.date;
+                        this.contacts[index].messages.push(newMessage);
+                        this.getAnswer = false;
+                    });
                 }, 2000);
             }
         } 
